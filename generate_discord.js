@@ -10,7 +10,7 @@ const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 async function generateMerak() {
     try {
         const response = await openai.chat.completions.create({
-            model: "gpt-4", // Veya istediğiniz bir model, örneğin "gpt-3.5-turbo"
+            model: "gpt-4o-mini", // Veya istediğiniz bir model, örneğin "gpt-3.5-turbo"
             messages: [
                 {
                     role: "system",
