@@ -1,0 +1,27 @@
+name: Saatlik Merak Üretici Discord
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Her saat başı
+  workflow_dispatch: # Manuel tetikleme için
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install openai node-fetch@2
+
+      - name: Run merak generator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: node generate_discord.js
