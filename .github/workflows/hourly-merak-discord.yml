@@ -2,7 +2,7 @@ name: Saatlik Merak Üretici Discord
 
 on:
   schedule:
-    - cron: '0 * * * *' # Her saat başı
+    - cron: '0 6-16 * * *' # Her saat başı (TSİ 09:00 - 19:00 arası)
   workflow_dispatch: # Manuel tetikleme için
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install openai node-fetch@2
+        run: npm install
 
       - name: Run merak generator
         env:
