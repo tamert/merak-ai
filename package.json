@@ -2,8 +2,9 @@
     "name": "generate-discord",
     "version": "1.0.0",
     "description": "Generate random questions for Discord",
-    "main": "generate_discord.js",
+    "main": "src/index.js",
     "scripts": {
+        "start": "node src/index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
@@ -13,7 +14,8 @@
         "url": "git+https://github.com/tamert/merak-ai.git"
     },
     "dependencies": {
-        "openai": "^4.36.0",
-        "node-fetch": "^2.7.0"
+        "dotenv": "^17.2.3",
+        "node-fetch": "^2.7.0",
+        "openai": "^4.36.0"
     }
 }
